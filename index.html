@@ -66,6 +66,7 @@ select {
   <td width=450px>
 <div id="selections">
 <select id="variable">
+<option value="NDX">Gentrification Index</option>
 <option value="MHI">Median Household Income</option>
 <option value="MGR">Median Gross Rent</option>
 <option value="MHV">Median Home Value</option>
@@ -74,10 +75,10 @@ select {
 <option value="EDU">Educational Attainment</option>
 <option value="UTF">Young Adult Population</option>
 <option value="WHT">White Population</option>
-<option value="NDX">Gentrification Index</option>
 </select>
 
 <select id="year">
+<option value="trnd">Trend</option>
 <option value="yr05">2005</option>
 <option value="yr06">2006</option>
 <option value="yr07">2007</option>
@@ -85,7 +86,6 @@ select {
 <option value="yr09">2009</option>
 <option value="yr10">2010</option>
 <option value="yr11">2011</option>
-<option value="trnd">Trend</option>
 </select></div>
 <br><br>
 My research identified eight primary demographic and housing indicators of gentrification. They are: 
@@ -129,8 +129,8 @@ var yr05 = 0*9,
     yr11 = 6*9,
     trnd = 7*9;
 
-var variable = MHI;
-var year = yr05;
+var variable = NDX;
+var year = trnd;
 var frmt = d3.format("$,.0f");
 
 var colorRange = ['rgb(118,42,131)','rgb(153,112,171)','rgb(194,165,207)',
