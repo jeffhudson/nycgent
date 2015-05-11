@@ -200,6 +200,7 @@ function updateMap(){
                 .range(colorRange);
 
   svg.select("g").selectAll("path")
+     .transition().duration(1500)
      .style("fill",function(d){
         return choro(+dat[d.properties.PUMACE10][variable + year]);
      });
