@@ -58,7 +58,7 @@ select {
 <table>
 <tr>
   <td></td>
-  <td>
+  <td width=500px>
     <div id="map"></div>
   </td>
   <td width=450px>
@@ -171,6 +171,7 @@ function ready(error, map, text) {
       .enter().append("path")
       .attr("id",function(d){return d.properties.PUMACE10;})
       .attr("d", proj)
+      .style("fill","#ffffff")
       .on("mouseover",mouseover)
       .on("mouseout",mouseout);
 
@@ -245,6 +246,8 @@ function drawLegend(){
   var legendcolors = d3.scale.threshold().domain(arb).range(colorRange);
 
   legend.append("rect")
+    .style("fill","#ffffff")
+    .transition().duration(1500)
    .attr("x", 20)
    .attr("y", function(d, i){ return height - (i*ls_h) - 2*ls_h;})
    .attr("width", ls_w)
@@ -253,6 +256,7 @@ function drawLegend(){
    .style("opacity", 0.75);
    
   legend.append("text")
+  .transition().duration(1500).delay(500)
    .attr("x", 50)
    .attr("y", function(d, i){ return height - (i*ls_h) - ls_h - 4;})
    .text(function(d, i){ return txt[i]; });
